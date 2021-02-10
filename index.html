@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neko Life｜猫とあなたの生活を切り取ろう。</title>
+    <meta
+      name="keywords"
+      content="Neko Life,猫,ペット,野良,飼い猫,生活,写真,投稿,共有"
+    />
+    <meta
+      name="description"
+      content="私たちの家族の一員である自慢の猫ちゃんを、かわいく・かっこよく・おもしろく写真に収めて思い出に残しましょう。"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/common/favicon/icon.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <noscript>
+      <link rel="stylesheet" href="./css/noscript.css" />
+    </noscript>
+  </head>
+
+  <body id="top-page">
+    <div id="loading" class="view">
+      <div class="bounce-cat-wrap">
+        <div class="parts face"></div>
+        <div class="parts ear"></div>
+        <div class="parts nose">
+          <span>人</span>
+        </div>
+        <div class="parts whiskers left">
+          <span class="top"></span>
+          <span class="mid"></span>
+          <span class="bottom"></span>
+        </div>
+        <div class="parts whiskers right">
+          <span class="top"></span>
+          <span class="mid"></span>
+          <span class="bottom"></span>
+        </div>
+        <div class="parts eyes">
+          <span class="left-eye"></span>
+          <span class="right-eye"></span>
+        </div>
+      </div>
+    </div>
+
+    <section id="login" class="view">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="wrap">
+            <div id="logo">
+              <p>Neko Life</p>
+            </div>
+            <form id="login-form">
+              <div id="login__email" class="form-group">
+                <label for="login-email" class="col-form-label">
+                  メールアドレス
+                </label>
+                <div>
+                  <input
+                    id="login-email"
+                    type="email"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div id="login__password" class="form-group">
+                <label for="login-password" class="col-form-label">
+                  パスワード
+                </label>
+                <div>
+                  <input
+                    id="login-password"
+                    type="password"
+                    class="form-control"
+                    required
+                  />
+                  <p class="form-text">
+                    初めての方は、登録するパスワードを入力してください
+                  </p>
+                </div>
+              </div>
+              <div id="login__help" class="alert alert-danger"></div>
+              <div class="form-group login__submit">
+                <div>
+                  <button
+                    id="login__submit-button"
+                    type="submit"
+                    class="btn-login"
+                  >
+                    ログイン
+                  </button>
+                </div>
+                <button id="to-reset-password" class="reset-btn" type="button">
+                  パスワードがわからない方
+                </button>
+              </div>
+            </form>
+            <section id="resetting">
+              <p>登録済みのアドレスにパスワード再設定メールを送ります。</p>
+              <form id="resetting-form">
+                <div class="form-group">
+                  <label for="resetting-email" class="col-form-label">
+                    メールアドレス
+                  </label>
+                  <div>
+                    <input
+                      id="resetting-email"
+                      type="email"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+                <div id="resetting__help" class="alert alert-danger"></div>
+                <div class="form-group login__submit">
+                  <div>
+                    <button
+                      id="resetting__submit-button"
+                      type="submit"
+                      class="btn-login"
+                    >
+                      送信
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <button id="back-login" class="reset-btn" type="button">
+                ログイン画面に戻る
+              </button>
+            </section>
+            <section id="resetting-confirm">
+              <p>
+                メールを送信しました。<br />内容を確認し、パスワードの再設定をしてください。
+              </p>
+              <button id="back-login" class="btn-login" type="button">
+                ログイン画面
+              </button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="main" class="view">
+      <header>
+        <div class="inner">
+          <div id="logo">
+            <a id="to-home" href="#">Neko Life</a>
+          </div>
+          <div id="user-state">
+            <button
+              type="button"
+              class="btn visible-on-login"
+              id="mypage-button"
+              data-toggle="modal"
+              data-target="#mypage-modal"
+            >
+              <i class="fas fa-paw"></i>
+              <span id="menu-profile-name"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section id="main-image">
+        <div class="inner">
+          <div class="catch">
+            <h1>Neko Life</h1>
+            <p>#猫との生活を思い出に残そう</p>
+            <div class="visible-on-logout">
+              <div class="promotion">
+                <a href="./signup.html" class="btn" id="sign-up">
+                  <i class="fas fa-user-plus"></i>
+                  <span>新規登録</span>
+                </a>
+                <div class="text">
+                  <p>
+                    ユーザー登録をすることで、ご自慢の猫ちゃんをお披露目できます。<br />
+                    登録をしなくてもみんなの猫ちゃんをチェックできます。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="content">
+        <div class="inner">
+          <h2>
+            <span class="ja">あなたと猫</span>
+            <span class="eng">life with a cat</span>
+          </h2>
+          <div class="narrow-down">
+            <form>
+              <input
+                type="search"
+                name="cat-search"
+                id="cat-search"
+                class="icon"
+                placeholder="&#xF002; なまえで検索"
+              />
+              <select name="cat-sort" id="cat-sort">
+                <option value="新入り猫">新入り猫</option>
+                <option value="センパイ猫">センパイ猫</option>
+                <option value="人気の猫">人気の猫</option>
+                <option value="投稿が多い順">投稿が多い順</option>
+                <option value="投稿が新しい順">投稿が新しい順</option>
+              </select>
+            </form>
+          </div>
+          <section id="view-cats">
+            <div class="inner"></div>
+            <div id="cat-template">
+              <div
+                id="cat-box"
+                class="box wow animate__animated animate__bounceIn"
+              >
+                <a
+                  class="prof-image"
+                  id="catclick"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#article-modal"
+                >
+                  <img class="cat-image" alt="" />
+                  <div class="article-area">
+                    <p class="article-date"></p>
+                    <p class="article-title"></p>
+                  </div>
+                </a>
+                <div class="name-area">
+                  <a class="cat-name" href="#">
+                    <span></span>
+                    <i class="cat-gender-icon fas fa-mars"></i>
+                  </a>
+                  <button type="button" class="delete-btn cat__delete">
+                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <!-- <p class="article-text"></p> -->
+                <ul class="status">
+                  <li>
+                    <i class="fas fa-heart"></i>
+                    <span>9999</span>
+                  </li>
+                  <li>
+                    <i class="fas fa-pen"></i>
+                    <span>9999</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- <div id="confirm-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body m-1">
+              <p>削除してよろしいですか？</p>
+              <div class="btn-area">
+                <button
+                  type="button"
+                  class="delete-btn cat__delete"
+                  data-dismiss="modal"
+                >
+                  <span>削除する</span>
+                </button>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">キャンセル</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div id="article-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <!-- <div class="modal-header">
+              <h4 class="modal-title">投稿内容</h4>
+            </div> -->
+            <div class="modal-body m-1">
+              <div class="image-box">
+                <img class="cat-image" alt="" />
+              </div>
+              <div class="text-box">
+                <div class="name-area">
+                  <p class="cat-name">
+                    <span></span>
+                    <i class="cat-gender-icon fas fa-mars"></i>
+                  </p>
+                </div>
+                <p class="date"></p>
+                <div class="article-area">
+                  <h3 class="title"></h3>
+                  <p class="text"></p>
+                </div>
+              </div>
+              <div class="btn-area">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="post-cat-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">投稿する</h4>
+            </div>
+            <div class="modal-body m-1">
+              <form id="cat-form">
+                <div class="form-group row">
+                  <label for="add-cat-name" class="col-md-3 col-form-label">
+                    猫のなまえ
+                  </label>
+                  <div class="col-md-9">
+                    <input
+                      id="add-cat-name"
+                      type="text"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <p class="col-md-3 col-form-label">猫の性別</p>
+                  <div class="radio-inline col-md-9">
+                    <input
+                      type="radio"
+                      name="cat-gender"
+                      id="add-cat-gender-male"
+                      value="male"
+                    />
+                    <label class="male" for="add-cat-gender-male">
+                      オス
+                      <i class="fas fa-mars"></i>
+                    </label>
+                    <input
+                      type="radio"
+                      name="cat-gender"
+                      id="add-cat-gender-female"
+                      value="female"
+                    />
+                    <label class="female" for="add-cat-gender-female">
+                      メス
+                      <i class="fas fa-venus"></i>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-3 col-form-label">猫の写真</div>
+                  <div class="col-md-9">
+                    <div class="custom-file">
+                      <input
+                        id="add-cat-image"
+                        type="file"
+                        accept=".jpg,.jpeg,.png,.gif, image/jpeg,image/png,image/gif"
+                        class="custom-file-input"
+                        required
+                      />
+                      <label
+                        id="add-cat-image-label"
+                        class="custom-file-label"
+                        for="add-cat-image"
+                        >ファイルを選択</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label
+                    for="add-cat-article-title"
+                    class="col-md-3 col-form-label"
+                  >
+                    投稿のタイトル
+                  </label>
+                  <div class="col-md-9">
+                    <input
+                      id="add-cat-article-title"
+                      type="text"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label
+                    for="add-cat-article-text"
+                    class="col-md-3 col-form-label"
+                  >
+                    投稿の本文
+                  </label>
+                  <div class="col-md-9">
+                    <textarea
+                      id="add-cat-article-text"
+                      class="form-control"
+                      required
+                    >
+                    </textarea>
+                  </div>
+                </div>
+                <div id="add-cat__help" class="alert alert-danger"></div>
+                <div class="btn-area">
+                  <button
+                    id="submit_add_cat"
+                    type="submit"
+                    class="btn btn-default btn-success"
+                  >
+                    投稿する
+                  </button>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">投稿せずに閉じる &times;</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="mypage-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">アカウント管理</h3>
+              <a class="btn visible-on-login" id="logout-button">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>ログアウト</span>
+              </a>
+            </div>
+            <div class="modal-body m-1">
+              <form id="settings-form">
+                <div class="form-group row">
+                  <label
+                    for="settings-nickname"
+                    class="col-lg-3 col-form-label"
+                  >
+                    ニックネーム
+                  </label>
+                  <div class="col-lg-9">
+                    <input
+                      id="settings-nickname"
+                      type="text"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+              </form>
+              <div class="btn-area">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        id="post-button"
+        class="btn"
+        data-toggle="modal"
+        data-target="#post-cat-modal"
+      >
+        <i class="fas fa-pen"></i>
+      </button>
+
+      <a href="#" id="to-top">
+        <i class="fas fa-fish fa-rotate-270"></i>
+        <span class="text">top</span>
+      </a>
+    </section>
+
+    <footer class="view">
+      <div class="inner">
+        <img class="logo" src="./images/common/footer/footer-logo.svg" alt="" />
+        <p class="copyright">©️Neko Life all rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: 'AIzaSyAbkBrALTo5ZnZbyzggEqEf5lRPF1UuE_Y',
+        authDomain: 'neko-life.firebaseapp.com',
+        databaseURL: 'https://neko-life-default-rtdb.firebaseio.com',
+        projectId: 'neko-life',
+        storageBucket: 'neko-life.appspot.com',
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <!-- end firebase -->
+
+    <!-- Font Awesome -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    ></script>
+    <script src="https://use.fontawesome.com/099455f185.js"></script>
+    <!-- end Font Awesome -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="./js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- <script src="js/vendor/mobile-detect.min.js"></script> -->
+    <!-- <script src="js/vue-gallery.js"></script> -->
+    <!-- <script src="./js/anime.min.js"></script> -->
+    <script src="./js/main-all.js"></script>
+  </body>
+</html>

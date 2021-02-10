@@ -1224,6 +1224,8 @@ footer .inner .copyright {
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
   color: #fff;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .modal-dialog .modal-header {

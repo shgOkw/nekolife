@@ -959,6 +959,8 @@ footer {
     background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(3px);
     color: #fff;
+    max-width: 1000px;
+    margin: auto;
   }
   .modal-header {
     padding: 3%;

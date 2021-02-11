@@ -1,4 +1,25 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-weight: 300;
+  src: local("M PLUS Rounded 1c Light"), local("M PLUS Rounded 1c-Light"), url("/font/MPLUSRounded1c-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-weight: 400;
+  src: local("M PLUS Rounded 1c Regular"), local("M PLUS Rounded 1c-Regular"), url("/font/MPLUSRounded1c-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-weight: 700;
+  src: local("M PLUS Rounded 1c Bold"), local("M PLUS Rounded 1c-Bold"), url("/font/MPLUSRounded1c-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
 .visible-block {
   display: block !important;
 }
@@ -476,7 +497,7 @@ login
   color: #fff;
   padding: 0.5em 0;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   border-radius: 40px;
   width: 50%;
   margin: 30px auto 0;

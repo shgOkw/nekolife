@@ -15,25 +15,45 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="./images/common/favicon/icon.png"
+      href="/images/common/favicon/icon.png"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/font/MPLUSRounded1c-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="preload"
+      href="/font/MPLUSRounded1c-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/font/MPLUSRounded1c-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link
       rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="/css/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
     <noscript>
-      <link rel="stylesheet" href="./css/noscript.css" />
+      <link rel="stylesheet" href="/css/noscript.min.css" />
     </noscript>
   </head>
 
@@ -189,7 +209,7 @@
             <p>#猫との生活を思い出に残そう</p>
             <div class="visible-on-logout">
               <div class="promotion">
-                <a href="./signup.html" class="btn" id="sign-up">
+                <a href="/signup.html" class="btn" id="sign-up">
                   <i class="fas fa-user-plus"></i>
                   <span>新規登録</span>
                 </a>
@@ -524,7 +544,7 @@
 
     <footer class="view">
       <div class="inner">
-        <img class="logo" src="./images/common/footer/footer-logo.svg" alt="" />
+        <img class="logo" src="/images/common/footer/footer-logo.svg" alt="" />
         <p class="copyright">©️Neko Life all rights reserved.</p>
       </div>
     </footer>
@@ -550,22 +570,30 @@
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+      async
     ></script>
-    <script src="https://use.fontawesome.com/099455f185.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0dcc885f72.js"
+      crossorigin="anonymous"
+      async
+    ></script>
     <!-- end Font Awesome -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="./js/wow.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"
+      defer
+    ></script>
+    <script src="/js/wow.min.js" defer></script>
     <script>
       new WOW().init();
     </script>
     <!-- <script src="js/vendor/mobile-detect.min.js"></script> -->
     <!-- <script src="js/vue-gallery.js"></script> -->
-    <!-- <script src="./js/anime.min.js"></script> -->
-    <!-- <script src="./js/main-all.js"></script> -->
-    <script src="./js/main.js"></script>
+    <!-- <script src="/js/anime.min.js"></script> -->
+    <!-- <script src="/js/main-all.js"></script> -->
+    <script src="/js/main.js"></script>
   </body>
 </html>
